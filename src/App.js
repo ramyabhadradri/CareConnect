@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Header from "./components/Common/Header";
 import Footer from "./components/Common/Footer";
-import Sidebar from "./components/Common/Sidebar"; // Import the Sidebar component
+import Sidebar from "./components/Common/Sidebar";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import { useAuth } from "./context/AuthContext";
@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <Header />
-      {currentUser && <Sidebar role={role} />} {/* Render Sidebar if user is logged in */}
+      {currentUser && <Sidebar role={role} />} 
       <Container className="mt-3 main-content">
         <Routes>
           <Route path="/" element={<Login />} />

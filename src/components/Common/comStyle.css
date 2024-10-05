@@ -1,0 +1,74 @@
+logoText {
+    font-family: "Poppins", sans-serif;
+}
+
+.nav-link {
+    /* Existing styles */
+    /* border-right: 1px solid rgba(255, 255, 255, 0.8); */
+    margin-left: 10px;
+    font-weight: 500;
+    /* White border with opacity */
+}
+
+/* src/components/Common/Sidebar.css */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    /* Adjust as needed */
+    height: 100%;
+    background-color: #f5f5f5;
+    /* Light background color */
+    padding: 20px;
+    border-right: 1px solid #dee2e6;
+    /* Border to separate from content */
+    overflow-y: auto;
+    /* Scrollable if content overflows */
+}
+
+.main-content {
+    margin-left: 250px;
+    /* Same width as sidebar to avoid overlap */
+}
+
+.header{
+    z-index: 1000;
+}
+
+.footer {
+    position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 56px; /* Adjust based on your footer height */
+  background-color: #343a40; /* Dark background color */
+  color: #fff; /* Light text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it is on top */
+}
+
+/* Sidebar Nav Links */
+.sidebar a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #11304f;
+    /* Dark text color */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #11304f;
+    /* Dark background on hover */
+    color: #f8f9fa;
+    /* Light text color on hover */
+    border-radius: 4px;
+    /* Rounded corners */
+    padding: 10px 15px;
+    /* Adjust padding for button effect */
+}
