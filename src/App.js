@@ -6,6 +6,8 @@ import Footer from "./components/Common/Footer";
 import Sidebar from "./components/Common/Sidebar";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
+import Profile from "./components/Profile/Profile";
+import PrivateRoute from "./components/Auth/PrivateRoute";
 import { useAuth } from "./context/AuthContext";
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
         </Routes>
       </Container>
       <Footer />
