@@ -145,7 +145,7 @@ const BookAppointment = () => {
               </Form.Group>
             )}
 
-            <Button variant="success" type="submit" className="w-100 mt-5">
+            <Button variant="success" type="submit" className="w-100 mt-5 mb-5">
               Book Appointment
             </Button>
           </Form>
