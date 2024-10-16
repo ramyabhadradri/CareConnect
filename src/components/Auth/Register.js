@@ -178,7 +178,6 @@ const Register = () => {
                 <option value="patient">Patient</option>
                 <option value="doctor">Doctor</option>
                 <option value="lab-technician">Lab Technician</option>
-                <option value="admin">Admin</option>
               </Form.Select>
             </Form.Group>
             {role === "doctor" && (
