@@ -13,6 +13,7 @@ import DoctorAvailability from "./components/Appointments/DoctorAvailability";
 import PredictDisease from "./components/Prediction/PredictDisease";
 import ManageUsers from "./components/Admin/ManageUsers";
 import AppointmentHistory from "./components/Appointments/AppointmentHistory";
+import AppointmentList from "./components/Appointments/AppointmentList";
 import { useAuth } from "./context/AuthContext";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/predict-disease" element={<PrivateRoute><PredictDisease /></PrivateRoute>} />
           <Route path="/manage-users" element={<PrivateRoute><ManageUsers /></PrivateRoute>} />
           <Route path="/appointment-history" element={<PrivateRoute><AppointmentHistory /></PrivateRoute>} />
+          <Route path="/appointments" element={<PrivateRoute><AppointmentList /></PrivateRoute>} />
         </Routes>
       </Container>
       <Footer />

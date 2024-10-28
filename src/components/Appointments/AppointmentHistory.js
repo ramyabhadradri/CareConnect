@@ -38,9 +38,9 @@ const AppointmentHistory = () => {
         });
 
         const completed = allAppointments.filter((appointment) => {
-          const appointmentDate = new Date(`${appointment.date}T00:00:00`);
-          return appointmentDate <= now;
-        });
+    const appointmentDate = new Date(`${appointment.date}T00:00:00`);
+    return appointmentDate <= now && appointment.status === 'Completed';
+});
 
         setUpcomingAppointments(upcoming);
         setCompletedAppointments(completed);
@@ -99,7 +99,7 @@ const AppointmentHistory = () => {
             {expandedAppointments[appointment.id] && (
               <div className="mt-3">
                 {/* Additional details can be added here */}
-                <p><strong>Additional Details:</strong> {appointment.additionalDetails}</p>
+                <p><strong>Additional Details:</strong> {appointment.prescription}</p>
               </div>
             )}
           </div>
