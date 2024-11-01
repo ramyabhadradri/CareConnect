@@ -38,7 +38,7 @@ const Login = () => {
             navigate("/pending-reports");
             break;
           case "admin":
-            navigate("/admin-dashboard");
+            navigate("/manage-users");
             break;
           default:
             setError("Unknown user role.");

@@ -14,6 +14,13 @@ import PredictDisease from "./components/Prediction/PredictDisease";
 import ManageUsers from "./components/Admin/ManageUsers";
 import AppointmentHistory from "./components/Appointments/AppointmentHistory";
 import AppointmentList from "./components/Appointments/AppointmentList";
+import AdminNotificationManager from "./components/Notifications/AdminNotificationManager";
+import PatientNotifications from "./components/Notifications/PatientNotifications";
+import LabReportRequests from "./components/Lab/LabReportRequests";
+import SubmittedReports from "./components/Lab/SubmittedReports.js";
+import ProvideLabReport from "./components/Lab/ProvideLabReport";
+import UpcomingAppointmentReminder from "./components/Mail/NotificationMailer";
+import PatientRecords from "./components/Appointments/PatientRecords";
 import { useAuth } from "./context/AuthContext";
 
 function App() {
@@ -35,6 +42,13 @@ function App() {
           <Route path="/manage-users" element={<PrivateRoute><ManageUsers /></PrivateRoute>} />
           <Route path="/appointment-history" element={<PrivateRoute><AppointmentHistory /></PrivateRoute>} />
           <Route path="/appointments" element={<PrivateRoute><AppointmentList /></PrivateRoute>} />
+          <Route path="/manage-notifications" element={<PrivateRoute><AdminNotificationManager /></PrivateRoute>} />
+          <Route path="/notifications" element={<PrivateRoute><PatientNotifications /></PrivateRoute>} />
+          <Route path="/pending-reports" element={<PrivateRoute><LabReportRequests /></PrivateRoute>} />
+          <Route path="/submitted-reports" element={<PrivateRoute><SubmittedReports /></PrivateRoute>} />
+          <Route path="/provide-lab-report/:reportId" element={<PrivateRoute><ProvideLabReport /></PrivateRoute>} />
+          <Route path="/remind-users" element={<PrivateRoute><UpcomingAppointmentReminder /></PrivateRoute>} />
+          <Route path="/patient-records" element={<PrivateRoute><PatientRecords /></PrivateRoute>} />
         </Routes>
       </Container>
       <Footer />
