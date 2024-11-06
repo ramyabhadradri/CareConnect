@@ -147,7 +147,7 @@ const DoctorAvailability = () => {
           {loading && <p>Loading...</p>}
 
           {availableSlots.length > 0 && (
-            <ListGroup>
+            <ListGroup className="mb-5">
               {availableSlots.map((slot, index) => (
                 <ListGroup.Item key={index} className="d-flex justify-content-between align-items-center">
                   {slot}

@@ -97,8 +97,8 @@ const ManageUsers = () => {
           {successMessage}
         </Alert>
       )}
-      <div className="table-responsive">
-      <Table striped bordered hover className="mt-4">
+      <div className="table-responsive mb-3">
+      <Table striped bordered hover className="mt-4 mb-5">
         <thead>
           <tr>
             <th>#</th>

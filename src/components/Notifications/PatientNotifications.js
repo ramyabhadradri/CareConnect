@@ -32,7 +32,7 @@ const PatientNotifications = () => {
 
   return (
     <Container className="my-4">
-      <h2 className="text-center mb-4">Your Notifications</h2>
+      <h2 className="text-center mb-4">Messages</h2>
       {error && <Alert variant="danger">{error}</Alert>}
 
       <ListGroup>
@@ -42,7 +42,7 @@ const PatientNotifications = () => {
               <div className="d-flex align-items-center">
                <FontAwesomeIcon className="text-warning me-3" size={24} icon={faBell} />
                 <div>
-                  <strong>{notification.title || "Notification"}:</strong> {notification.content} <br />
+                  <strong>{notification.title || "Message"}:</strong> {notification.content} <br />
                   <small className="text-muted">
                     <strong>Date:</strong> {new Date(notification.createdAt.seconds * 1000).toLocaleDateString()} <br />
                     <strong>Time:</strong> {new Date(notification.createdAt.seconds * 1000).toLocaleTimeString()}

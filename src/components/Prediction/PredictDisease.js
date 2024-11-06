@@ -128,6 +128,8 @@ function PredictDisease() {
         </Modal.Header>
         <Modal.Body>
           {disease ? `Predicted Disease: ${disease}` : 'No disease prediction available.'}
+          <br />
+          <p className="mt-3">Book an appointment and consult a doctor for further guidance.</p>
           {error && <p className="text-danger">{error}</p>}
         </Modal.Body>
         <Modal.Footer>

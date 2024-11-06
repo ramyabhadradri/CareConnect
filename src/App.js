@@ -21,6 +21,7 @@ import SubmittedReports from "./components/Lab/SubmittedReports.js";
 import ProvideLabReport from "./components/Lab/ProvideLabReport";
 import UpcomingAppointmentReminder from "./components/Mail/NotificationMailer";
 import PatientRecords from "./components/Appointments/PatientRecords";
+import HelpGuide from "./components/Common/HelpGuide";
 import { useAuth } from "./context/AuthContext";
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path="/provide-lab-report/:reportId" element={<PrivateRoute><ProvideLabReport /></PrivateRoute>} />
           <Route path="/remind-users" element={<PrivateRoute><UpcomingAppointmentReminder /></PrivateRoute>} />
           <Route path="/patient-records" element={<PrivateRoute><PatientRecords /></PrivateRoute>} />
+          <Route path="/help" element={<PrivateRoute><HelpGuide /></PrivateRoute>} />
         </Routes>
       </Container>
       <Footer />

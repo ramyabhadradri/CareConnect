@@ -6,6 +6,7 @@ import { db } from "../../firebase/config";
 import { setDoc, doc } from "firebase/firestore";
 import singUpImg from "../../assets/Images/register.png";
 import { updateProfile } from "firebase/auth";
+import SuccessModal from '../../components/Common/SuccessModal'; // Import the SuccessModal component
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -22,6 +23,8 @@ const Register = () => {
   const [labName, setLabName] = useState(""); // Only for lab technicians
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false); // State for success modal
+
   const { signup } = useAuth(); // signup function from AuthContext
   const navigate = useNavigate();
 
@@ -67,16 +70,22 @@ const Register = () => {
       // Save additional user information to Firestore
       await setDoc(doc(db, "users", user.uid), userData);
 
-      // Redirect to the appropriate dashboard based on role
-      if (role === "patient") {
-        navigate("/patient-dashboard");
-      } else if (role === "doctor") {
-        navigate("/doctor-dashboard");
-      } else if (role === "lab-technician") {
-        navigate("/pharmacy-dashboard");
-      } else if (role === "admin") {
-        navigate("/admin-dashboard");
-      }
+      // Show success modal
+      setShowSuccessModal(true);
+
+      // Redirect after the modal is closed (you can customize the redirect here)
+      setTimeout(() => {
+        if (role === "patient") {
+          navigate("/profile");
+        } else if (role === "doctor") {
+          navigate("/profile");
+        } else if (role === "lab-technician") {
+          navigate("/pending-reports");
+        } else if (role === "admin") {
+          navigate("/manage-users");
+        }
+      }, 4000); // Delay navigation to allow user to see the modal
+
     } catch (error) {
       setError("Failed to create an account. " + error.message);
     } finally {
@@ -140,10 +149,11 @@ const Register = () => {
               <Form.Select value={gender} onChange={(e) => setGender(e.target.value)}>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
+                <option value="Prefer not to say">Prefer not to say</option>
               </Form.Select>
             </Form.Group>
             <Form.Group id="place" className="mb-3">
-              <Form.Label><strong>Place</strong></Form.Label>
+              <Form.Label><strong>City</strong></Form.Label>
               <Form.Control
                 type="text"
                 required
@@ -154,14 +164,22 @@ const Register = () => {
             </Form.Group>
             <Form.Group id="bloodGroup" className="mb-3">
               <Form.Label><strong>Blood Group</strong></Form.Label>
-              <Form.Control
-                type="text"
-                required
-                placeholder="Enter your blood group"
+              <Form.Select
                 value={bloodGroup}
                 onChange={(e) => setBloodGroup(e.target.value)}
-              />
+              >
+                <option value="">Select Blood Group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </Form.Select>
             </Form.Group>
+
             <Form.Group id="mobile" className="mb-3">
               <Form.Label><strong>Mobile Number</strong></Form.Label>
               <Form.Control
@@ -205,20 +223,29 @@ const Register = () => {
                 </Form.Select>
               </Form.Group>
             )}
+            
             <Button
               disabled={loading}
-              className="w-100 mt-3 mb-5"
+              className="w-100 mt-3 mb-5 p"
               variant="success"
               type="submit"
             >
               Register
             </Button>
           </Form>
+          <div className="mb-5"></div>
         </Col>
         <Col md={5}>
           <img className="HomeStyle.img" src={singUpImg} alt="signup SVG" />
         </Col>
       </Row>
+
+      {/* Success Modal */}
+      <SuccessModal
+        show={showSuccessModal}
+        onHide={() => setShowSuccessModal(false)}
+        message="Registration successful!"
+      />
     </Container>
   );
 };

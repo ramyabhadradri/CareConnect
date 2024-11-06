@@ -9,7 +9,7 @@ const Sidebar = ({ role }) => {
     <div className="sidebar">
       <Nav className="flex-column">
        
-        <Nav.Link as={Link} to="/" className='mt-2'>Home</Nav.Link>
+        <Nav.Link as={Link} className='mt-2'>Home</Nav.Link>
         {/* Render links based on role */}
         {role === 'admin' && (
           <>
@@ -17,6 +17,7 @@ const Sidebar = ({ role }) => {
             <Nav.Link as={Link} to="/manage-users">Manage Users</Nav.Link>
             <Nav.Link as={Link} to="/remind-users">Remind users</Nav.Link>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
+            <Nav.Link as={Link} to="/help">Profile</Nav.Link>
           </>
         )}
         {role === 'doctor' && (
@@ -24,16 +25,18 @@ const Sidebar = ({ role }) => {
             <Nav.Link as={Link} to="/appointments">Check Appointments</Nav.Link>
             <Nav.Link as={Link} to="/patient-records">Check Patient Records</Nav.Link>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
+            <Nav.Link as={Link} to="/help">Profile</Nav.Link>
           </>
         )}
         {role === 'patient' && (
           <>
             <Nav.Link as={Link} to="/appointment-history">Appointment History</Nav.Link>
-            <Nav.Link as={Link} to="/book-appointment">Book Appointment</Nav.Link>
-            <Nav.Link as={Link} to="/doctor-availability">Doctor Availability</Nav.Link>
-            <Nav.Link as={Link} to="/notifications">Notifications</Nav.Link>
+            
+            <Nav.Link as={Link} to="/doctor-availability">Doctor Availability and Booking</Nav.Link>
+            <Nav.Link as={Link} to="/notifications">Messages</Nav.Link>
             <Nav.Link as={Link} to="/predict-disease">Disease Prediction</Nav.Link>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
+            <Nav.Link as={Link} to="/help">Profile</Nav.Link>
           </>
         )}
         {role === 'lab-technician' && (
@@ -41,6 +44,7 @@ const Sidebar = ({ role }) => {
             <Nav.Link as={Link} to="/pending-reports">Check Requests</Nav.Link>
             <Nav.Link as={Link} to="/submitted-reports">Completed Reports</Nav.Link>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
+            <Nav.Link as={Link} to="/help">Profile</Nav.Link>
           </>
         )}
         {/* Add more role-based links as needed */}
