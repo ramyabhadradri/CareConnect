@@ -17,7 +17,7 @@ const Sidebar = ({ role }) => {
             <Nav.Link as={Link} to="/manage-users">Manage Users</Nav.Link>
             <Nav.Link as={Link} to="/remind-users">Remind users</Nav.Link>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
-            <Nav.Link as={Link} to="/help">Profile</Nav.Link>
+            <Nav.Link as={Link} to="/help">Help Guide</Nav.Link>
           </>
         )}
         {role === 'doctor' && (
@@ -25,7 +25,7 @@ const Sidebar = ({ role }) => {
             <Nav.Link as={Link} to="/appointments">Check Appointments</Nav.Link>
             <Nav.Link as={Link} to="/patient-records">Check Patient Records</Nav.Link>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
-            <Nav.Link as={Link} to="/help">Profile</Nav.Link>
+            <Nav.Link as={Link} to="/help">Help Guide</Nav.Link>
           </>
         )}
         {role === 'patient' && (
@@ -36,7 +36,7 @@ const Sidebar = ({ role }) => {
             <Nav.Link as={Link} to="/notifications">Messages</Nav.Link>
             <Nav.Link as={Link} to="/predict-disease">Disease Prediction</Nav.Link>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
-            <Nav.Link as={Link} to="/help">Profile</Nav.Link>
+            <Nav.Link as={Link} to="/help">Help Guide</Nav.Link>
           </>
         )}
         {role === 'lab-technician' && (
@@ -44,7 +44,7 @@ const Sidebar = ({ role }) => {
             <Nav.Link as={Link} to="/pending-reports">Check Requests</Nav.Link>
             <Nav.Link as={Link} to="/submitted-reports">Completed Reports</Nav.Link>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
-            <Nav.Link as={Link} to="/help">Profile</Nav.Link>
+            <Nav.Link as={Link} to="/help">Help Guide</Nav.Link>
           </>
         )}
         {/* Add more role-based links as needed */}
