@@ -57,14 +57,14 @@ const Header = () => {
             {currentUser ? (
               <>
                 
-                <Nav.Link onClick={() => { logout(); handleNavLinkClick(); }} className="btn btn-dark d-flex align-items-center">
-                  <FontAwesomeIcon icon={faSignOut} style={{ marginRight: '10px' }} />
+                <Nav.Link onClick={() => { logout(); handleNavLinkClick(); }} className="btn btn-dark d-flex align-items-center" style={{color: 'white'}}>
+                  <FontAwesomeIcon icon={faSignOut} style={{ marginRight: '10px', color: 'white' }} />
                   Logout
                 </Nav.Link>
               </>
             ) : (
               <>
-                <Nav.Link as={Link} to="/login" className="btn btn-dark d-flex align-items-center" onClick={handleNavLinkClick}>
+                <Nav.Link as={Link} to="/login" className="btn btn-dark d-flex align-items-center" style={{color: 'white'}} onClick={handleNavLinkClick}>
                   <FontAwesomeIcon icon={faSignIn} style={{ marginRight: '10px' }} />
                   Login
                 </Nav.Link>

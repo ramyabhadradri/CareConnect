@@ -99,10 +99,11 @@ const Register = () => {
         <Col md={6}>
           <h2 className="text-center m-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Registration</h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
+          <Form id="displayName" onSubmit={handleSubmit}>
             <Form.Group id="displayName" className="mb-3">
-              <Form.Label><strong>Full Name</strong></Form.Label>
+              <Form.Label htmlFor="displayName"><strong>Full Name</strong></Form.Label>
               <Form.Control
+                id="displayName"
                 type="text"
                 required
                 placeholder="Enter your full name"
@@ -111,8 +112,9 @@ const Register = () => {
               />
             </Form.Group>
             <Form.Group id="email" className="mb-3">
-              <Form.Label><strong>Email Address</strong></Form.Label>
+              <Form.Label htmlFor="email"><strong>Email Address</strong></Form.Label>
               <Form.Control
+                id="email"
                 type="email"
                 required
                 placeholder="Enter your email"
@@ -121,8 +123,9 @@ const Register = () => {
               />
             </Form.Group>
             <Form.Group id="password" className="mb-3">
-              <Form.Label><strong>Password</strong></Form.Label>
+              <Form.Label htmlFor="password"><strong>Password</strong></Form.Label>
               <Form.Control
+                id="password"
                 type="password"
                 required
                 placeholder="Enter a password"
@@ -131,8 +134,9 @@ const Register = () => {
               />
             </Form.Group>
             <Form.Group id="confirmPassword" className="mb-3">
-              <Form.Label><strong>Confirm Password</strong></Form.Label>
+              <Form.Label htmlFor="confirmPassword"><strong>Confirm Password</strong></Form.Label>
               <Form.Control
+                id="confirmPassword"
                 type="password"
                 required
                 placeholder="Confirm your password"
@@ -141,20 +145,21 @@ const Register = () => {
               />
             </Form.Group>
             <Form.Group id="dateOfBirth" className="mb-3">
-              <Form.Label><strong>Date of Birth</strong></Form.Label>
-              <Form.Control type="date" value={dateOfBirth} onChange={(e) => setDateOfBirth(e.target.value)} />
+              <Form.Label htmlFor="dateOfBirth"><strong>Date of Birth</strong></Form.Label>
+              <Form.Control id="dateOfBirth" type="date" value={dateOfBirth} onChange={(e) => setDateOfBirth(e.target.value)} />
             </Form.Group>
             <Form.Group id="gender" className="mb-3">
-              <Form.Label><strong>Gender</strong></Form.Label>
-              <Form.Select value={gender} onChange={(e) => setGender(e.target.value)}>
+              <Form.Label htmlFor="gender"><strong>Gender</strong></Form.Label>
+              <Form.Select id="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="Prefer not to say">Prefer not to say</option>
               </Form.Select>
             </Form.Group>
             <Form.Group id="place" className="mb-3">
-              <Form.Label><strong>City</strong></Form.Label>
+              <Form.Label htmlFor="place"><strong>City</strong></Form.Label>
               <Form.Control
+                id="place"
                 type="text"
                 required
                 placeholder="Enter your place"
@@ -163,8 +168,9 @@ const Register = () => {
               />
             </Form.Group>
             <Form.Group id="bloodGroup" className="mb-3">
-              <Form.Label><strong>Blood Group</strong></Form.Label>
+              <Form.Label htmlFor="bloodGroup"><strong>Blood Group</strong></Form.Label>
               <Form.Select
+                id="bloodGroup"
                 value={bloodGroup}
                 onChange={(e) => setBloodGroup(e.target.value)}
               >
@@ -181,8 +187,9 @@ const Register = () => {
             </Form.Group>
 
             <Form.Group id="mobile" className="mb-3">
-              <Form.Label><strong>Mobile Number</strong></Form.Label>
+              <Form.Label htmlFor="mobile"><strong>Mobile Number</strong></Form.Label>
               <Form.Control
+                id="mobile"
                 type="text"
                 required
                 placeholder="Enter your mobile number"
@@ -191,8 +198,8 @@ const Register = () => {
               />
             </Form.Group>
             <Form.Group id="role" className="mb-3">
-              <Form.Label><strong>Role</strong></Form.Label>
-              <Form.Select value={role} onChange={(e) => setRole(e.target.value)}>
+              <Form.Label htmlFor="role"><strong>Role</strong></Form.Label>
+              <Form.Select id="role" value={role} onChange={(e) => setRole(e.target.value)}>
                 <option value="patient">Patient</option>
                 <option value="doctor">Doctor</option>
                 <option value="lab-technician">Lab Technician</option>
@@ -213,8 +220,8 @@ const Register = () => {
             )}
             {role === "lab-technician" && (
               <Form.Group id="labName" className="mb-3">
-                <Form.Label><strong>Lab Name</strong></Form.Label>
-                <Form.Select value={labName} onChange={(e) => setLabName(e.target.value)}>
+                <Form.Label htmlFor="labName"><strong>Lab Name</strong></Form.Label>
+                <Form.Select id="labName" value={labName} onChange={(e) => setLabName(e.target.value)}>
                   <option value="">Select Lab</option>
                   <option value="Central Lab">Central Lab</option>
                   <option value="Diagnostic Lab">Diagnostic Lab</option>

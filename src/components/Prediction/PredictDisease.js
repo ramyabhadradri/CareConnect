@@ -80,9 +80,10 @@ function PredictDisease() {
   return (
     <div className="fullContainer">
       <Form onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label className="mt-5"><h5>Select Symptoms</h5></Form.Label>
+        <Form.Group id="symptoms">
+          <Form.Label htmlFor="symptoms" className="mt-5"><h5>Select Symptoms</h5></Form.Label>
           <Form.Control 
+            id="symptoms"
             type="text" 
             placeholder="Search symptoms..." 
             value={searchTerm}

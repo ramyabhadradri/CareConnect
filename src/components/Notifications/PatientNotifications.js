@@ -52,7 +52,7 @@ const PatientNotifications = () => {
 
               {/* Optional Badge for Notification Type */}
               <div>
-                <Badge bg="info" pill>{notification.type || "General"}</Badge>
+                <Badge bg="dark" pill>{notification.type || "General"}</Badge>
               </div>
             </ListGroup.Item>
           ))
